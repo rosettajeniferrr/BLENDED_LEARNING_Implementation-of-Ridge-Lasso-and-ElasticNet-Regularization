@@ -51,16 +51,16 @@ for name,model in models.items():
     pipeline = Pipeline([('poly',PolynomialFeatures(degree=2)),
     ('regressor',model)
     ])
-pipeline.fit(x_train, y_train)
-predictions = pipeline.predict(x_test)
-mse = mean_squared_error(y_test, predictions)
-mae = mean_absolute_error(y_test, predictions)
-r2 = r2_score(y_test, predictions)
-result[name] = {'MSE': mse, 'MAE': mae, 'R² Score': r2}
-print('Name: Rosetta Jenifer.C')
+    pipeline.fit(x_train, y_train)
+    predictions = pipeline.predict(x_test)
+    mse = mean_squared_error(y_test, predictions)
+    mae = mean_absolute_error(y_test, predictions)
+    r2 = r2_score(y_test, predictions)
+    result[name] = {'MSE': mse, 'MAE': mae, 'R² Score': r2}
+print('Name: Rosetta Jenifer C')
 print('Reg. No: 212225230230')
 for model_name, metrics in result.items():
-    print (f"{model_name} - Mean Squared Error: {metrics['MSE']:.2f}, Mean Absolute Error: {metrics['MAE']:.2f}, R² Score: {metrics['R² Score']:.2f}")
+    print (f"{model_name} - Mean Squared Error: {metrics['MSE']:.2f}, Mean Absolute Error: {metrics['MAE']:.2f}, R² Score: {metrics['R² Score']:.2f}")4
 results_df = pd.DataFrame(result).T
 results_df.reset_index(inplace=True)
 results_df.rename(columns={'index': 'Model'}, inplace=True)
@@ -77,20 +77,14 @@ plt.ylabel('R2 Score')
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
-plt.subplot(1, 2, 1)
-sns.barplot(x='Model', y='MAE', data=results_df, palette='viridis')
-plt.title('Mean Absolute Error (MAE)')
-plt.ylabel('MAE')
-plt.xticks(rotation=45)
 ```
 
 ## Output:
-<img width="451" height="162" alt="image" src="https://github.com/user-attachments/assets/b99e44e4-562b-4746-8d54-aeeb55663bde" />
-<img width="907" height="92" alt="image" src="https://github.com/user-attachments/assets/a19a15ba-c63c-45c6-a6bc-1d9c3c1d6b1d" />
-<img width="556" height="98" alt="image" src="https://github.com/user-attachments/assets/75ca19c1-e3c1-4b89-b0e6-1fb784d6e386" />
-<img width="838" height="746" alt="image" src="https://github.com/user-attachments/assets/737d4c1e-3481-43fa-8160-da7b3454d319" />
-<img width="653" height="723" alt="image" src="https://github.com/user-attachments/assets/522b0e72-8631-41bf-b2cf-d4e5e01cb1c5" />
-<img width="647" height="737" alt="image" src="https://github.com/user-attachments/assets/736cc9be-e759-406e-8e4b-2616a6740e8f" />
+<img width="1512" height="321" alt="image" src="https://github.com/user-attachments/assets/b3600195-a77b-49b4-a13c-c38338f751c1" />
+<img width="960" height="125" alt="image" src="https://github.com/user-attachments/assets/b719aa26-012f-4fe0-8868-ebbc941e648f" />
+<img width="1436" height="587" alt="image" src="https://github.com/user-attachments/assets/03a574b2-b80b-4ddc-bdf6-722803615f45" />
+
+
 
 
 ## Result:
